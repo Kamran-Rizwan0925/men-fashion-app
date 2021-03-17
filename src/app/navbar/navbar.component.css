@@ -1,0 +1,119 @@
+.dropdown-toggle:hover {
+    cursor: pointer;
+}
+a{
+text-decoration: none;
+}
+marquee {
+    background-color: dodgerblue;
+}
+
+.fa-user {
+    color: white;
+    float: right;
+    padding: 5px;
+}
+/* a:hover{
+  color:blue;
+} */
+.email {
+    color: white;
+    float: right;
+    /* padding: 5px; */
+    /* margin-top: 10px; */
+    margin-right: .5em;
+    font-size: medium;
+}
+
+.fa-shopping-bag {
+    color: white;
+    float: right;
+    padding: 5px;
+    /* margin-right: 1em; */
+}
+
+
+/* .fa-search {
+  color: white;
+  float: right;
+  padding: 5px;
+  margin-top: 10px;
+  margin-right: 2em;
+} */
+
+.home_menu {
+    background: linear-gradient( #3498DB 0%, #2874A6 100%);
+    /* position: relative; */
+}
+
+.home1 {
+    background: #3498DB;
+    /* background:#4488dd; */
+}
+
+.mainlogo {
+    float: left;
+    padding: 5px;
+    margin-top: 10px;
+    margin-right: 3em;
+}
+
+h5 {
+    color: whitesmoke;
+    text-align: center;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.fas {
+    color: white;
+}
+
+ul li a {
+    color: white;
+    font-size: 16px;
+}
+
+ul li a:hover {
+    color: rgb(0, 43, 71);
+    text-decoration: underline;
+}
+
+/* .navbar-brand h4 {
+  max-width: 100px;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: inline-block;
+  top: 0;
+} */
+
+h4 {
+    max-width: 100%;
+}
+
+.ti-facebook {
+    color: white;
+}
+
+.ti-twitter-alt {
+    color: white;
+    padding-left: 5px;
+}
+
+.ti-instagram {
+    color: white;
+    padding-left: 10px;
+}
+
+#search_1 {
+    color: white;
+}
+@media screen and (min-width: 480px) {
+  .navbar-brand{
+   /* position: absolute; */
+    margin: 0 auto;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,11 @@
+<app-products-filter [category]="category"></app-products-filter>
+<carousel *ngIf="!this.category"></carousel>
+<div class="row text-lg-left container-fluid" *ngIf="this.category">
+  <ng-container *ngFor="let p of filteredProducts;let i=index">
+    <div class="col-sm-6 col-md-4 ">
+      <product-card [product]="p" [shopping-cart]="cart"></product-card>
+    </div>
+    <!-- <div *ngIf="(i+1)%2===0" class="w-100"></div> -->
+  </ng-container>
+</div>
+

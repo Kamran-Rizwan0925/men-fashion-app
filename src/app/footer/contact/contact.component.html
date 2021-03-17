@@ -1,0 +1,92 @@
+
+  <section class="contact-section padding_top">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <h2 class="contact-title">Get in Touch</h2>
+              </div>
+              <div class="col-lg-8">
+                  <form (submit)="contactInfo(form)" #form="ngForm"
+                  class="form-contact contact_form" id="contactForm" novalidate="novalidate">
+                      <div class="row">
+                          <div class="col-12">
+                              <div class="form-group">
+                                  <textarea
+                                  style="background-color:azure"
+                                  ngModel #msg="ngModel" name="message"
+                                  class="form-control w-100"  id="message" cols="30" rows="9"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder='Enter Message' maxlength="100" required></textarea>
+                              </div>
+                          </div>
+                          <div class="col-sm-6">
+                              <div class="form-group">
+                                  <input
+                                  style="background-color:azure"
+                                  ngModel #name="ngModel" name="name"
+                                  class="form-control"  id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder='Enter your name' maxlength="40" required>
+                              </div>
+                          </div>
+                          <div class="col-sm-6">
+                              <div class="form-group">
+                                  <input
+                                  style="background-color:azure"
+                                  ngModel #email="ngModel" name="email"
+                                  class="form-control" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder='Enter email address' maxlength="40" required>
+                              </div>
+                          </div>
+                          <div class="col-12">
+                              <div class="form-group">
+                                  <input style="background-color:azure"
+                                  ngModel #subject="ngModel" name="subject"
+                                  class="form-control" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder='Enter Subject' maxlength="40" required>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group mt-3">
+                          <button class="btn_3 button-contactForm">Send Message</button>
+                      </div>
+                  </form>
+              </div>
+              <div class="col-lg-4">
+                  <div class="media contact-info">
+                      <span class="contact-info__icon"><i class="ti-home"></i></span>
+                      <div class="media-body">
+                          <h3>Lahore, Pakistan.</h3>
+                          <p>540000</p>
+                      </div>
+                  </div>
+                  <div class="media contact-info">
+                      <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+                      <div class="media-body">
+                          <h3>00 (92) 9865 562</h3>
+                          <p>Mon to Fri 9am to 6pm</p>
+                      </div>
+                  </div>
+                  <div class="media contact-info">
+                      <span class="contact-info__icon"><i class="ti-email"></i></span>
+                      <div class="media-body">
+                          <h3>support@menfashion.com</h3>
+                          <p>Send us your query anytime!</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+<!-- Button trigger modal -->
+<button hidden="true" type="button" id="mybtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="position: absolute;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body" >
+        <span>{{this.msgAlert}}</span>
+        <button type="button" id="openModalButton" class="close btn" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

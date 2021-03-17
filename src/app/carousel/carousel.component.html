@@ -1,0 +1,43 @@
+<div class="container mt-1">
+  <ngb-carousel *ngIf="images" class="carousel slide">
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper" >
+            <img class="d-block w-100 image-responsive" [src]="images[2]" alt="Random first slide" >
+        </div>
+        <div class="carousel-caption" style="color: black;">
+            <h2>Take A look at new Sale</h2>
+            <p>Get 25% Off on Every 3rd Purchase!!</p>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img class="d-block w-100 h-50 image-responsive" [src]="images[1]" alt="Random second slide">
+        </div>
+        <div class="carousel-caption" >
+            <h2 style="color: white;">Don't wait, SHOP NOW!!!!</h2>
+            <p style="color: black;">New Products are availble in all Sizes!</p>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img class="d-block w-100 h-50 image-responsive" [src]="images[0]" alt="Random third slide">
+        </div>
+        <div class="carousel-caption">
+            <h2 style="color: black;">Hurry Up!</h2>
+            <p style="color:white;">First 100 Customers will get 50% Discount on all products!</p>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img class="d-block w-100 h-50 image-responsive" [src]="images[3]" alt="Random fourth slide">
+        </div>
+        <div class="carousel-caption">
+          <h2>Take A look at new Sale</h2>
+          <p>Get 25% Off on Every 3rd Purchase!!</p>
+        </div>
+    </ng-template>
+</ngb-carousel>
+</div>
+
+
+<app-section></app-section>

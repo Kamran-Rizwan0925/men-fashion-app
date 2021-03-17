@@ -1,0 +1,17 @@
+<div *ngIf="messages.length==0" class="container p-5 text-danger">
+  No messages to display!
+</div>
+<div class="container p-5" *ngIf="messages.length!=0">
+  <div *ngFor="let m of messages" class="alert alert-light alert-dismissible fade show" role="alert">
+    <h6>Name: {{m.name}}</h6>
+    <h6 class="text-primary">Email: {{m.email}}</h6>
+    <h6 class="text-success">Subject: {{m.subject}}</h6>
+    <span class="text-info">Message:</span>
+    <q class="text-warning">{{m.message}}</q>
+
+    <button (click)="deleteMsg(m._id)" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
+

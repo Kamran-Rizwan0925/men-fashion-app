@@ -1,0 +1,73 @@
+.dropdown-toggle:hover{
+  cursor: pointer;
+}
+h4 {
+  color: white;
+  font-size: 24px;
+  font-family: serif;
+}
+
+marquee {
+  background-color: dodgerblue
+}
+
+.fa-user {
+  color: white;
+  float: right;
+  padding: 5px;
+  margin-top: 10px;
+  margin-right: 1em;
+}
+
+.fa-shopping-bag {
+  color: white;
+  float: right;
+  padding: 5px;
+  margin-top: 10px;
+  margin-right: 1em;
+}
+
+.fa-search {
+  font-size: larger;
+  color: white;
+  float: right;
+  padding: 5px;
+  margin-top: 10px;
+  margin-right: 2em;
+}
+
+.home_menu {
+  background: linear-gradient( #3498DB 0%, #2874A6 100%);
+}
+
+.home1 {
+  background: #3498DB;
+}
+
+.mainlogo {
+  float: left;
+  padding: 5px;
+  margin-top: 10px;
+  margin-right: 3em;
+}
+
+h5 ,h6{
+  color: whitesmoke;
+  text-align: center;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.fas {
+  color: white;
+}
+
+ul li a {
+  color: white;
+  font-size: 16px;
+}
+
+ul li a:hover {
+  color: black;
+  text-decoration: underline;
+}

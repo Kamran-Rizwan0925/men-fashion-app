@@ -1,0 +1,64 @@
+<div class="container mt-5 p-5">
+  <h1>Shopping Cart</h1><br>
+  <span
+  style="background-color: rgb(20, 103, 255); color: white;">
+  You {{items}} items in your shopping cart.
+  </span>
+  <!-- Angular-6-Datatable -->
+  <div class="container-fluid mt-3"  *ngIf="this.items!=0">
+
+    <table class="table  text-center table-responsive-md" [mfData]="this.cart.items" #mf="mfDataTable" [mfRowsOnPage]="10">
+    <thead>
+    <tr>
+      <th style="width: 20%;">Image</th>
+        <th style="width: 20%;">
+            <mfDefaultSorter by="p.product.name">Name</mfDefaultSorter>
+        </th>
+        <th style="width: 20%;" class="text-center">
+          <mfDefaultSorter by="p.product.category">Category</mfDefaultSorter>
+      </th>
+        <th style="width: 20%;" class="text-center">
+            <mfDefaultSorter by="p.product.price">Price</mfDefaultSorter>
+        </th>
+
+        <th style="width: 20%;"></th>
+
+    </tr>
+    </thead>
+    <tbody >
+    <tr *ngFor="let p of mf.data">
+        <td ><img [src]="p.product.imagePath" class="rounded border" alt="Image Not Available!" width="50px" height="50px"></td>
+        <td>{{p.product.name}}</td>
+        <td >{{p.product.category}}</td>
+        <td >{{p.product.price | currency:'USD'}}</td>
+
+
+        <td >
+          <button type="submit" class="btn btn-danger"
+          (click)="onRemove(p.product._id)"
+          >Remove</button>
+        </td>
+    </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><b>Total Price:</b> </td>
+        <td style="font-weight: bold; font-family: Arial, Helvetica, sans-serif;">{{this.cart.itemsTotalPrice | currency:'USD'}}</td>
+      </tr>
+      <tr>
+          <td colspan="12">
+              <mfBootstrapPaginator [rowsOnPageSet]=10></mfBootstrapPaginator>
+          </td>
+      </tr>
+    </tfoot>
+  </table>
+  </div>
+  <a
+  routerLink="/checkout"
+  *ngIf="this.items!=0" class="btn btn-primary">
+    Check Out
+  </a>
+</div>

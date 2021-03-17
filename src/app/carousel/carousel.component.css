@@ -1,0 +1,12 @@
+.carousel-caption {
+    color: #e7e5ee;
+}
+carouselDiv{
+  padding: 0;
+  margin: 0;
+  /* max-height: 500px; */
+}
+
+.carousel-caption h2,p{
+  color: whitesmoke;
+}

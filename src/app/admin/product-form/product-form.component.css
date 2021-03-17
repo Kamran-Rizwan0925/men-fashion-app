@@ -1,0 +1,17 @@
+
+.btn{
+  margin: .5em;
+  /* float: right;; */
+}
+
+.container{
+  padding: 5rem 2rem;
+}
+.product-form{
+  background-color: hsl(0, 0%, 99%);
+  padding: 10px;
+}
+.image{
+  height:75%;
+  width: 100%;
+}

@@ -1,0 +1,114 @@
+<div class='container-fluid p-3 '>
+  <div class="row " >
+    <div class=' col-md-4 p-1 '>
+      <div class='order-info-content h-75 d-inline-block' style="overflow-y: auto;">
+        <h2>Order Summary</h2>
+        <div class='line'></div>
+        <div *ngIf="this.cart">
+          <div  *ngFor="let p of this.cart.items" class='p-2'>
+            <table class='order-table'>
+              <tbody>
+                <tr >
+                  <td><img [src]="p.product.imagePath" class='full-width'>
+                  </td>
+                  <td>
+                    <br> <span class='thin'>{{p.product.name}}</span>
+                    <br> {{p.product.category}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class='price'>{{p.product.price | currency:'USD'}}</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class='line'></div>
+          </div>
+        </div>
+
+        <div class=" p-2  md-5">
+          <span style='float:left;'>
+            <div class='thin dense'>Items Total</div>
+            <div class='thin dense'>Delivery Charges</div>
+            <div class='line'></div>
+            TOTAL
+          </span>
+          <span style='float:right; text-align:right;' *ngIf="this.cart">
+            <div class='thin dense'>{{ this.cart.itemsTotalPrice | currency:'USD'}}</div>
+            <div class='thin dense'>{{"25 " | currency:'USD'}}</div>
+            <div class='line'></div>
+            {{ this.cart.itemsTotalPrice + 25 | currency:'USD'}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class='credit-info col-md-8 mt-4 d-inline-block' style="height: fit-content;">
+        <div class='credit-info-content p-3'>
+          <form  #placeOrderForm="ngForm" (submit)="placeOrder(placeOrderForm)">
+            <img src='https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png' height='80' class='credit-card-image' id='credit-card-image'>
+            <table class='half-input-table'>
+              <tr>
+                <td> Name
+                  <input class='input-field'
+                  name="name" ngModel #name="ngModel" type="text"
+                  >
+                </td>
+                <td> Phone No
+                  <input class='input-field'
+                  name="phoneNo" ngModel #phoneNo="ngModel" type="number"
+                  >
+                </td>
+              </tr>
+            </table>
+            Address
+            <input class='input-field'
+            name="address" ngModel #address="ngModel" type="text"
+            >
+            Card Number
+            <input class='input-field'
+            name="cardNo" ngModel #cardNo="ngModel" type="number"
+            >
+            Card Holder
+            <input class='input-field'
+            name="cardHolder" ngModel #cardHolder="ngModel" type="text"
+            >
+            <table class='half-input-table'>
+              <tr>
+                <td> Expires
+                  <input class='input-field'
+                  name="expires" ngModel #expires="ngModel" type="number"
+                  >
+                </td>
+                <td>CVC
+                  <input class='input-field'
+                  name="cvc" ngModel #cvc="ngModel" type="number"
+                  >
+                </td>
+              </tr>
+            </table>
+            <button class='pay-btn' type="submit">Checkout</button>
+          </form>
+        </div>
+
+    </div>
+  </div>
+</div>
+<!-- Button trigger modal -->
+<button hidden="true" type="button" id="mybtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="position: absolute;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body" >
+        <span>{{this.msgAlert}}</span>
+        <button type="button" id="openModalButton" class="close btn" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

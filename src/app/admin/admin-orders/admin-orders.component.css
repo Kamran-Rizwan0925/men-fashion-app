@@ -1,0 +1,100 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+/* body,html {
+  height:100%;
+  margin:0;
+  font-family:lato;
+} */
+
+h2 {
+  margin-bottom:0px;
+  margin-top:25px;
+  text-align:center;
+  font-weight:200;
+  font-size:19px;
+  font-size:1.2rem;
+
+}
+
+.thin {
+  font-weight:400;
+}
+.small {
+  font-size:12px;
+  font-size:.8rem;
+}
+.half-input-table {
+  border-collapse:collapse;
+  width:100%;
+}
+.half-input-table td:first-of-type {
+  border-right:10px solid #4488dd;
+  width:50%;
+}
+
+.price {
+  font-weight: 500;
+  bottom:0px;
+  /* position:absolute; */
+  right:0px;
+  color:#4488dd;
+}
+.order-table td:first-of-type {
+  width:25%;
+}
+/* .order-table {
+    position:relative;
+} */
+.line {
+  height:1px;
+  width:100%;
+  margin-top:10px;
+  /* margin-bottom:10px; */
+  background:#ddd;
+}
+.order-table td:last-of-type {
+  vertical-align:top;
+  padding-left:25px;
+}
+/* .order-info-content {
+  table-layout:fixed;
+} */
+
+.full-width {
+  width:100%;
+}
+.pay-btn {
+
+  border:none;
+  background:#22b877;
+  line-height:2em;
+  border-radius:10px;
+  font-size:19px;
+  font-size:1.2rem;
+  color:#fff;
+  cursor:pointer;
+  /* position:absolute; */
+  bottom:25px;
+  width:8em;
+  -webkit-transition:all .2s ease;
+          transition:all .2s ease;
+}
+.pay-btn:hover {
+  background:#c4b108;
+    color:#eee;
+  -webkit-transition:all .2s ease;
+          transition:all .2s ease;
+}
+
+.total {
+  margin-top:25px;
+  font-size:20px;
+  font-size:1.3rem;
+  /* position:absolute; */
+  bottom:30px;
+  right:27px;
+  left:35px;
+  color: dodgerblue;
+}
+b{
+  color: gray;
+}

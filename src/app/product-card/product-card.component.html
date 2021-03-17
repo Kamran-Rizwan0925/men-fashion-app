@@ -1,0 +1,59 @@
+<!-- <div  class="card mt-2" style="width:18rem;">
+    <img class="image img-fluid" [src]="product.imagePath" alt="No Image Available">
+    <div class="card-body">
+      <h4 class="card-title ml-2">{{product.name}}</h4>
+      <h6 class="card-title ml-2">Price:{{product.price | currency:'USD'}}</h6>
+      <div class="card-footer">
+        <button
+          [disabled]="!this.showCartBtn"
+          (click)="addToCart(product)"
+          class="btn btn-primary btn-block" >Add to Cart
+        </button>
+
+      </div>
+    </div>
+</div> -->
+<section class="new_arrival section_padding mt-4 " style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+  <!-- <div class="container-fluid "> -->
+      <!-- <div class="row "> -->
+          <!-- <div class="col-lg-12 "> -->
+              <!-- <div class="new_arrival_iner filter-container "> -->
+                  <div class="single_arrivel_item weidth_1 mix shoes ">
+                      <img [src]="product.imagePath" alt="# " class="image-responsive">
+                      <div class="hover_text ">
+                          <h3>{{product.name}}</h3>
+                          <!-- <a href="single-product.html ">
+                              <h3>Lorem Canvas Low-Top Sneaker</h3>
+                          </a> -->
+                          <!-- <div class="rate_icon ">
+                              <a href="# "> <i class="fas fa-star "></i> </a>
+                              <a href="# "> <i class="fas fa-star "></i> </a>
+                              <a href="# "> <i class="fas fa-star "></i> </a>
+                              <a href="# "> <i class="fas fa-star "></i> </a>
+                              <a href="# "> <i class="fas fa-star "></i> </a>
+                          </div> -->
+                          <h5>Price: {{  product.price | currency:'USD'}}</h5>
+                          <div class="social_icon ">
+                              <!-- <a href="# "><i class="ti-heart "></i></a> -->
+                              <a
+                                role="button"
+                                [hidden]="!this.showCartBtn"
+                                  (click)="addToCart(product)"
+                                  title="Add to Cart!"
+                                 ><i class="ti-bag "></i>
+                              </a>
+                              <!-- <a  title="Like It!"
+                              role="button"
+
+                               ><i class="ti-heart "></i>
+                            </a> -->
+                              <i *ngIf="!this.showCartBtn" > Product added to cart!</i>
+                          </div>
+                      </div>
+                  </div>
+
+              <!-- </div> -->
+          <!-- </div> -->
+      <!-- </div> -->
+  <!-- </div> -->
+</section>

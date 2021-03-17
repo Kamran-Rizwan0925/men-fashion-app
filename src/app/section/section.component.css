@@ -1,0 +1,49 @@
+#hel {
+  background-color: #f5f3ee;
+  font-weight: bolder;
+  width: 200px;
+  height: auto;
+  text-align: center;
+  color: black;
+  position: absolute;
+  margin-left: 35%;
+  margin-top: 13px;
+}
+
+#border {
+  margin-top: 30px;
+  width: 100%;
+  border-bottom: 2px solid rgb(230, 229, 229);
+  z-index: -1;
+  position: relative;
+}
+
+h2 {
+  color: #464444;
+  font-size: 19px;
+  font-weight: bolder;
+  padding-top: 5px;
+  font-family: Georgia, Utopia, 'Times New Roman', Times, serif;
+}
+
+h2 {
+  font-family: sans-serif;
+  font-weight: bolder;
+  text-align: center;
+}
+
+h3 {
+  color: #464444;
+  font-size: 36px;
+  font-weight: bolder;
+  padding-top: 5px;
+}
+
+#our_product {
+  text-align: center;
+  color: black;
+  font-size: 18px;
+  margin-top: 20px;
+  /* font-family: Georgia, Utopia, 'Times New Roman', Times, serif;*/
+  font-family: Verdana, sans-serif
+}

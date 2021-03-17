@@ -1,0 +1,22 @@
+.product-form{
+  background-color: hsl(0, 0%, 99%);
+  padding: 10px;
+}
+.image{
+  height:250px;
+  width: 100%;
+}
+/*
+img{
+  height: 18em;
+  width: 18em;
+} */
+.card-body{
+  padding: 0;
+}
+.card-footer{
+  padding: 0;
+}
+.new_arrival{
+  padding: 0;
+}

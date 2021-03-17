@@ -1,0 +1,150 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <!-- <div class="jumbotron"> -->
+        <!-- Spinner not implemented yet -->
+        <!-- <div  class="spinner-border text-primary"></div> -->
+
+        <!--Using  Reactive Form -->
+        <form [formGroup]="form" (ngSubmit)="saveProduct()"  class="product-form">
+          <h1>Product Form</h1><hr>
+            <!-- Basic Label and Input    -->
+            <!-- <div class="form-group">
+              <label for=""></label>
+              <input type="" class="form-control" id="" placeholder="">
+            </div> -->
+            <div class="form-group">
+              <label for="prodName">Name:</label>
+              <input formControlName="name" type="text" class="form-control" id="prodName"  placeholder="Enter product name">
+              <div class="alert alert-danger" *ngIf="form.get('name').invalid && form.get('name').touched">
+                Name is required!
+              </div>
+            </div>
+
+            <div class="form-group">
+                <label for="proQty">Quantity</label>
+                <input formControlName="quantity" type="number" class="form-control" id="proQty" placeholder="Enter product quantity">
+                <div class="alert alert-danger" *ngIf="(form.get('quantity').invalid && form.get('quantity').touched)||form.get('quantity').errors?.min">
+                    <div *ngIf="form.get('quantity').errors?.required">Quantity is required!</div>
+                    <div *ngIf="form.get('quantity').errors?.min">Quantity shoud be greater or equal to zero!</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="prodPrice">Price</label>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                    <input  formControlName="price" type="number" class="form-control" id="prodPrice" placeholder="Enter product price"  [min]="0">
+
+                </div>
+                <div class="alert alert-danger" *ngIf="(form.get('price').invalid && form.get('price').touched)||form.get('price').errors?.min">
+                  <div *ngIf="form.get('price').errors?.required">Price is required!</div>
+                  <div *ngIf="form.get('price').errors?.min">Price shoud be greater or equal to zero!</div>
+                </div>
+
+            </div>
+            <div class="form-group">
+              <label for="category" >Category</label>
+              <select class="custom-select" formControlName="category"  id="category">
+                <option value=""></option>
+                <option value="Pants">Pants</option>
+                <option value="Shirts">Shirts</option>
+                <option value="Hats">Hats</option>
+                <option value="Shoes">Shoes</option>
+                <option value="Walates">Walates</option>
+                <option value="Belts">Belts</option>
+                <option value="Watches">Watches</option>
+              </select>
+              <div class="alert alert-danger" *ngIf="(form.get('category').invalid && form.get('category').touched)">
+                <div *ngIf="form.get('category').errors?.required">category is required!</div>
+              </div>
+          </div>
+
+            <!-- For Image -->
+          <div class="form-group">
+              <label for="prodImage">Choose Image</label>
+              <input  accept="image/*"
+              (change)="onImagePicked($event)"
+              type="file" class="form-control" id="prodImage" placeholder="Upload product  image">
+              <!-- <div class="alert alert-danger" *ngIf="(form.get('image').invalid && form.get('image').focus)">
+                  <div *ngIf="form.get('image').invalid ">Image is required!</div>
+              </div> -->
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+          <!-- <button type="submit" class="btn btn-danger" (click)="onDelete()">Delete</button> -->
+
+
+        </form>
+        </div>
+    <!-- </div> -->
+    <div class="col-md-6">
+        <div class="card" style="width: 22em;height: 25em;">
+            <img class="card-img-top image" *ngIf="imagePreview !=='' && form.get('image').valid" [src]="imagePreview" alt="No Image Uploaded yet">
+            <div class="card-body">
+              <h5 class="card-title">{{form.get('name').value}}</h5>
+              <p class="card-text">{{form.get('price').value | currency:'USD'}}</p>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Template driven form  -->
+<!-- <form (ngSubmit)="saveProduct(product)" #product="ngForm" class="product-form">
+    <h1>Product Form</h1><hr>
+      <div class="form-group">
+        <label for="prodName">Name:</label>
+        <input [ngModel]="prod?.name" name="name" type="text" class="form-control" id="prodName"  placeholder="Enter product name" required #name="ngModel">
+        <div class="alert alert-danger" *ngIf="name.invalid && name.touched">
+          Name is required!
+        </div>
+      </div>
+
+      <div class="form-group">
+          <label for="proQty">Quantity</label>
+          <input [ngModel]="prod?.quantity" name="quantity" type="number" class="form-control" id="proQty" placeholder="Enter product quantity" required #quantity="ngModel" [min]="0">
+          <div class="alert alert-danger" *ngIf="(quantity.invalid && quantity.touched)||quantity.errors?.min">
+              <div *ngIf="quantity.errors?.required">Quantity is required!</div>
+              <div *ngIf="quantity.errors?.min">Quantity shoud be greater or equal to zero!</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label for="prodPrice">Price</label>
+          <div class="input-group-prepend">
+              <span class="input-group-text">$</span>
+              <input [ngModel]="prod?.price" name="price" type="number" class="form-control" id="prodPrice" placeholder="Enter product price" required #price="ngModel" [min]="0">
+
+          </div>
+          <div class="alert alert-danger" *ngIf="(price.invalid && price.touched)||price.errors?.min">
+            <div *ngIf="price.errors?.required">Price is required!</div>
+            <div *ngIf="price.errors?.min">Price shoud be greater or equal to zero!</div>
+          </div>
+
+      </div>
+      <div class="form-group">
+        <label for="category" >Category</label>
+        <select class="custom-select" name="category" [ngModel]="prod?.category" id="category" #category="ngModel" required>
+          <option value=""></option>
+          <option value="Pants">Pants</option>
+          <option value="Shirts">Shirts</option>
+          <option value="Watches">Watches</option>
+          <option value="Hats">Hats</option>
+          <option value="Shoes">Shoes</option>
+        </select>
+        <div class="alert alert-danger" *ngIf="(category.invalid && category.touched)">
+          <div *ngIf="category.errors?.required">category is required!</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="prodImage">Choose Image</label>
+        <input  #imageInput  accept="image/*"
+
+        type="file" class="form-control" id="prodImage" placeholder="Upload product  image">
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+
+
+</form> -->
