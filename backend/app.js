@@ -4,7 +4,9 @@ const bodyParser=require("body-parser");
 const mongoose=require('mongoose');
 const path=require("path");
 //connecting to mongodb database
-mongoose.connect('mongodb://localhost:27017/menFashion',{ useNewUrlParser: true })
+// local connection string = 'mongodb://localhost:27017/menFashion'
+mongoose.connect('mongodb+srv://Kamran_Rizwan0925:6QBrpcNv2OM6C3vP@cluster0.vpsip.mongodb.net/menFashion?retryWrites=true&w=majority',{ useNewUrlParser: true })
+
 .then(()=>{
   console.log('Connected to Mongo DB.')
 })

@@ -47,3 +47,7 @@ h3 {
   /* font-family: Georgia, Utopia, 'Times New Roman', Times, serif;*/
   font-family: Verdana, sans-serif
 }
+.img-fluid{
+  height: 150px;
+  width: 150px;
+}
